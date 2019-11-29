@@ -1,4 +1,4 @@
-# manejo-de-cliente
+# Manejo de clientes
 Pequeña aplicación para probar TabLayout, TextInputLayout, RecyclerView, Fragments y Snackbar 
 
 En esta aplicación podemos ver como definir una interfaz creada a través de fragments dinamicos, la comunicación de estos
