@@ -16,9 +16,10 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class CreacionDeClientesFragment extends Fragment {
     private TextInputEditText nombre,apellido,edad;
-    private ConectorFragments frag;
-    public CreacionDeClientesFragment(ConectorFragments frag){
-        this.frag = frag;
+    private ConectorFragments conexionConVisionado;
+    
+    public CreacionDeClientesFragment(ConectorFragments conexionConVisionado){
+        this.conexionConVisionado = conexionConVisionado;
     }
 
     @Nullable
@@ -41,7 +42,7 @@ public class CreacionDeClientesFragment extends Fragment {
                             CreacionDeClientesFragment.this.edad.getText().toString()
                     );
 
-                    frag.enviarCliente(new Cliente(nombre,apellido,edad));
+                    conexionConVisionado.enviarCliente(new Cliente(nombre,apellido,edad));
                 }
             }
         });

@@ -15,15 +15,12 @@ import com.agomezlucena.manejodeclientes.R;
 import com.agomezlucena.manejodeclientes.gestion_clientes.Cliente;
 import com.agomezlucena.manejodeclientes.gestion_clientes.adapters.ClienteAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class VisionadoDeClientesFragment extends Fragment {
     private RecyclerView listaDeClientes;
     private ClienteAdapter adapatador;
 
     public VisionadoDeClientesFragment() {
-        // Required empty public constructor
+
     }
 
 
