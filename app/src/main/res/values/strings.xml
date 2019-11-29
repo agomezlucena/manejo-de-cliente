@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tus clientes</string>
+    <string name="visionado">Visionado</string>
+    <string name="creacion">Dar de alta</string>
+    <string name="nombre">Nombre:</string>
+    <string name="apellido">Apellido:</string>
+    <string name="edad">Edad:</string>
+</resources>
