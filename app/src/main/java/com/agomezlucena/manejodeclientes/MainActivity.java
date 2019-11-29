@@ -9,8 +9,11 @@ import com.agomezlucena.manejodeclientes.gestion_clientes.adapters.MainActivityF
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
+
     private TabLayout pestañas;
     private ViewPager viewPager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,4 +27,5 @@ public class MainActivity extends AppCompatActivity {
 
         pestañas.setupWithViewPager(viewPager);
     }
+
 }

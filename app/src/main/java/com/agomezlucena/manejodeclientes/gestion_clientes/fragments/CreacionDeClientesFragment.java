@@ -15,8 +15,13 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class CreacionDeClientesFragment extends Fragment {
+
     private TextInputEditText nombre,apellido,edad;
     private ConectorFragments conexionConVisionado;
+
+    public CreacionDeClientesFragment(){
+
+    }
     
     public CreacionDeClientesFragment(ConectorFragments conexionConVisionado){
         this.conexionConVisionado = conexionConVisionado;

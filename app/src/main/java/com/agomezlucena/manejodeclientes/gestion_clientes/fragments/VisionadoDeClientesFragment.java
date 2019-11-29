@@ -16,6 +16,7 @@ import com.agomezlucena.manejodeclientes.gestion_clientes.Cliente;
 import com.agomezlucena.manejodeclientes.gestion_clientes.adapters.ClienteAdapter;
 
 public class VisionadoDeClientesFragment extends Fragment {
+
     private RecyclerView listaDeClientes;
     private ClienteAdapter adapatador;
 

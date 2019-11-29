@@ -15,25 +15,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteViewHolder> {
-    private List<Cliente>clientes;
+
+    private List<Cliente>   clientes;
 
     public ClienteAdapter(){
         super();
         clientes = new ArrayList<>();
     }
 
-
-
     @NonNull
     @Override
     public ClienteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ClienteViewHolder(
+       return new ClienteViewHolder(
                     LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.cliente_card,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ClienteViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ClienteViewHolder holder, final int position) {
         holder.bindData(clientes.get(position));
     }
 
@@ -47,7 +46,7 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
         notifyItemInserted(clientes.indexOf(c));
     }
 
-    public static class ClienteViewHolder extends RecyclerView.ViewHolder{
+    public static class ClienteViewHolder extends RecyclerView.ViewHolder {
         private TextView nombre,apellido,edad;
 
         public ClienteViewHolder(@NonNull View itemView) {
@@ -62,5 +61,6 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
             apellido.setText(c.getApellido());
             edad.setText(String.valueOf(c.getEdad()));
         }
+
     }
 }
