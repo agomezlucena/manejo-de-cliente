@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.agomezlucena.manejodeclientes.CambioPestaña;
 import com.agomezlucena.manejodeclientes.R;
 import com.agomezlucena.manejodeclientes.gestion_clientes.Cliente;
 import com.agomezlucena.manejodeclientes.gestion_clientes.fragments.ConectorFragments;
@@ -19,10 +20,12 @@ public class MainActivityFragmentPagerAdapter extends FragmentPagerAdapter imple
     private Fragment[]  fragmentos = new Fragment[]{new VisionadoDeClientesFragment(),new CreacionDeClientesFragment(this)};
     private int[]       titulos = new int[]{R.string.visionado,R.string.creacion};
     private Context     contexto;
+    private CambioPestaña cambiar;
 
-    public MainActivityFragmentPagerAdapter(@NonNull FragmentManager fm, Context contexto) {
+    public MainActivityFragmentPagerAdapter(@NonNull FragmentManager fm, Context contexto, CambioPestaña cambiar) {
         super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.contexto = contexto;
+        this.cambiar = cambiar;
     }
 
     @NonNull
@@ -46,5 +49,6 @@ public class MainActivityFragmentPagerAdapter extends FragmentPagerAdapter imple
     public void enviarCliente(Cliente u) {
         VisionadoDeClientesFragment fragmentoAComunicar =  (VisionadoDeClientesFragment)fragmentos[0];
         fragmentoAComunicar.añadirCliente(u);
+        cambiar.cambiar(0);
     }
 }

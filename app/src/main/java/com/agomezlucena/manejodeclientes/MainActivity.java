@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.agomezlucena.manejodeclientes.gestion_clientes.adapters.MainActivityFragmentPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private TabLayout pestañas;
     private ViewPager viewPager;
@@ -22,10 +22,16 @@ public class MainActivity extends AppCompatActivity {
         pestañas = findViewById(R.id.activity_main_pestañas);
         viewPager = findViewById(R.id.activity_main_pager);
 
-        MainActivityFragmentPagerAdapter adapter = new MainActivityFragmentPagerAdapter(getSupportFragmentManager(),this);
+        MainActivityFragmentPagerAdapter adapter = new MainActivityFragmentPagerAdapter(getSupportFragmentManager(), this, new CambioPestaña() {
+            @Override
+            public void cambiar(int position) {
+                pestañas.getTabAt(position).select();
+            }
+        });
         viewPager.setAdapter(adapter);
 
         pestañas.setupWithViewPager(viewPager);
     }
+
 
 }
